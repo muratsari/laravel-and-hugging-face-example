@@ -1,0 +1,144 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "AI-Powered API",
+        "description": "<p>The Swagger UI provides an interactive interface to explore and test the AI-powered API endpoints created with Laravel and Hugging Face.</p><p>This repository was originally created for demonstration purposes at GDG DevFest in Çanakkale on 20th October 2024. It showcases how to integrate Hugging Face models into a Laravel application, allowing users to interact with machine learning capabilities such as natural language processing and image recognition via simple API calls.</p><p>The Swagger UI enables real-time testing and documentation of each endpoint, making it an invaluable tool for developers exploring AI integration.</p>",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/ai/translate": {
+            "post": {
+                "tags": [
+                    "AI"
+                ],
+                "summary": "Translation between Turkish and English, both ways",
+                "operationId": "2129e4ecbd284808a2a635b6cf7e276a",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "source_lang": {
+                                        "type": "string",
+                                        "enum": [
+                                            "en",
+                                            "tr"
+                                        ],
+                                        "example": "en"
+                                    },
+                                    "text": {
+                                        "type": "string",
+                                        "example": "Çanakkale is where Europe and Asia meet in a graceful embrace, their histories intertwined across millennia. As you stand at the edge of the Dardanelles, watching the turquoise waters flow, you can feel the heartbeat of ancient civilizations. This is the land of Troy, where legendary heroes once walked, and the modern world still marvels at its beauty. Çanakkale isn’t just a city; it’s a timeless passageway between cultures, where every corner tells a story of resilience, exploration, and wonder."
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/ai/text-to-image": {
+            "post": {
+                "tags": [
+                    "AI"
+                ],
+                "summary": "Generates an image from the provided text input.",
+                "operationId": "fc43d0cbeb12b09941696206098516f5",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "text": {
+                                        "type": "string",
+                                        "example": "A software event taking place in a large convention center, crowded with hundreds of attendees. On stage, a presentation about Laravel and artificial intelligence is being delivered, with engaging visuals projected on a screen. The audience is attentively watching, some taking notes and others discussing among themselves. The atmosphere is vibrant and energetic, reflecting a passion for technology and innovation."
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/ai/text-to-speech": {
+            "post": {
+                "tags": [
+                    "AI"
+                ],
+                "summary": "Converts input text into speech and returns the audio in .flac format",
+                "operationId": "c5d1e8c13640cd052e43f2e636df019c",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "text": {
+                                        "type": "string",
+                                        "example": "In Çanakkale, history isn’t just something you read about—it’s something you walk through, breathe in, and feel in your bones. From the ancient ruins of Troy to the Ottoman-era fortresses guarding the Dardanelles, the past comes alive in every step you take. Yet Çanakkale isn’t stuck in history; it’s a vibrant, modern city with a unique cultural blend, offering travelers the best of both worlds. It’s a place where the echoes of the past meet the energy of the present, making every visit unforgettable."
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/ai/image-to-text": {
+            "post": {
+                "tags": [
+                    "AI"
+                ],
+                "summary": "Extracts meaningful captions from the provided image.",
+                "operationId": "4fd2476c22a2a8e71da56c08e94ba0cf",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "AI",
+            "description": "Artificial Intelligence Powered Endpoints"
+        }
+    ]
+}

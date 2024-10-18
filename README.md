@@ -49,7 +49,7 @@ This repository provides a blueprint for building AI-powered APIs using Laravel 
 
 5. **Set up Hugging Face access token:**
 
-In your `.env` file, update the `HUGGING_FACE_ACCESS_TOKEN` variable with your Hugging Face API access token.
+   In your `.env` file, update the `HUGGING_FACE_ACCESS_TOKEN` variable with your Hugging Face API access token.
 
    ```bash
    HUGGING_FACE_ACCESS_TOKEN=your-access-token
@@ -58,10 +58,10 @@ In your `.env` file, update the `HUGGING_FACE_ACCESS_TOKEN` variable with your H
 
 6. **Serve the application:**
 
-Start the Laravel development server:
+   Start the Laravel development server:
 
    ```bash
    php artisan serve
    ```
 
-The application will be running at `http://localhost:8000`
+   The application will be running at `http://localhost:8000`

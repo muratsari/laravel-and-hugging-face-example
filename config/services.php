@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'hugging_face' => [
+        'access_token' => env('HUGGING_FACE_ACCESS_TOKEN'),
+    ],
+
 ];
